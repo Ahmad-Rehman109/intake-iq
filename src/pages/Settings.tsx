@@ -216,18 +216,23 @@ const Settings = () => {
           </Card>
 
           {/* Intake URL */}
-          <Card>
+          <Card className="border-primary/40 bg-card/80">
             <CardHeader>
-              <CardTitle>Your Intake Form URL</CardTitle>
-              <CardDescription>Share this link with potential clients</CardDescription>
+              <CardTitle className="flex items-center gap-2">
+                <span className="text-primary">🔗</span>
+                Your Intake Form URL
+              </CardTitle>
+              <CardDescription>
+                Share this exact link with potential clients. This is the only URL that will work for your firm.
+              </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-3">
               <div className="flex items-center gap-2">
                 <input
                   type="text"
                   value={intakeUrl}
                   readOnly
-                  className="flex-1 px-3 py-2 border rounded-md bg-muted text-sm"
+                  className="flex-1 px-4 py-3 border-2 rounded-lg bg-muted text-sm font-mono select-all"
                 />
                 <Button
                   size="sm"
@@ -238,6 +243,32 @@ const Settings = () => {
                 >
                   Copy
                 </Button>
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => window.open(intakeUrl, '_blank')}
+                >
+                  Test Form
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => {
+                    const emailSubject = "Complete Your Immigration Intake Form";
+                    const emailBody = `Thank you for your interest. Please complete our intake form at:\n\n${intakeUrl}`;
+                    window.open(`mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`);
+                  }}
+                >
+                  Email Link
+                </Button>
+              </div>
+              <div className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-md border">
+                <strong>Important:</strong> Your firm's unique identifier is <code className="text-primary font-mono">{firm.firm_slug}</code>. 
+                Make sure clients use this exact URL.
               </div>
             </CardContent>
           </Card>
