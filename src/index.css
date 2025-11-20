@@ -8,99 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    /* Dark theme by default - minimal and professional */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Navy blue primary for professional, trustworthy feel */
-    --primary: 215 75% 25%;
-    --primary-foreground: 0 0% 100%;
+    /* Electric blue primary for modern, tech-forward feel */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
 
-    /* Light blue-gray for secondary elements */
-    --secondary: 214 20% 95%;
-    --secondary-foreground: 215 25% 27%;
+    /* Subtle dark secondary */
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 214 20% 95%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 222 47% 11%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 214 20% 92%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 222 47% 6%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Success green for positive actions */
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+    --success: 142 76% 46%;
+    --success-foreground: 222 47% 6%;
 
-    /* Warning yellow for qualified leads */
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 222 47% 6%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 215 75% 25%;
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 215 75% 25%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 215 75% 25%;
-    --sidebar-accent: 215 75% 30%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 215 75% 30%;
-    --sidebar-ring: 215 75% 50%;
-  }
-
-  .dark {
-    --background: 215 25% 12%;
-    --foreground: 0 0% 98%;
-
-    --card: 215 25% 15%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 215 25% 15%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 215 75% 40%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 215 20% 20%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 215 20% 20%;
-    --muted-foreground: 215 15% 65%;
-
-    --accent: 215 20% 25%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
-
-    --border: 215 20% 25%;
-    --input: 215 20% 25%;
-    --ring: 215 75% 50%;
-
-    --sidebar-background: 215 25% 10%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 215 75% 40%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 215 25% 20%;
-    --sidebar-ring: 215 75% 50%;
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 47% 11%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 

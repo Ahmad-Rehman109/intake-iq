@@ -91,14 +91,28 @@ const IntakeForm = () => {
     setLoading(true);
 
     try {
+      if (!firmSlug) {
+        throw new Error("Invalid form URL. Please use the link provided by your attorney.");
+      }
+
       // Get firm data
       const { data: firm, error: firmError } = await supabase
         .from("firms")
         .select("*")
         .eq("firm_slug", firmSlug)
-        .single();
+        .maybeSingle();
 
-      if (firmError) throw new Error("Firm not found");
+      if (firmError) {
+        console.error("Firm query error:", firmError);
+        throw new Error("Unable to verify firm information. Please contact support.");
+      }
+
+      if (!firm) {
+        console.error("No firm found for slug:", firmSlug);
+        throw new Error(
+          `Firm not found with identifier "${firmSlug}". Please verify your intake form link.`
+        );
+      }
 
       // Calculate lead score
       const score = calculateLeadScore(formData, firm.service_states || []);
@@ -123,7 +137,10 @@ const IntakeForm = () => {
         score,
       });
 
-      if (leadError) throw leadError;
+      if (leadError) {
+        console.error("Lead insertion error:", leadError);
+        throw leadError;
+      }
 
       toast({
         title: "Thank You!",
@@ -132,9 +149,10 @@ const IntakeForm = () => {
 
       navigate("/thank-you");
     } catch (error: any) {
+      console.error("Form submission error:", error);
       toast({
         title: "Submission Failed",
-        description: error.message,
+        description: error.message || "An unexpected error occurred. Please try again.",
         variant: "destructive",
       });
     } finally {
